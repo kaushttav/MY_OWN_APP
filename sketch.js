@@ -38,6 +38,7 @@ function preload(){
   book3_image = loadImage("book1.jpg");
 
 }
+// first page starts
 function setup() {
   
   var canvas = createCanvas(displayWidth,displayHeight);
@@ -49,7 +50,7 @@ function setup() {
 
   greeting1 = createElement('h2'); // CREATES GREETINGS OF WELCOME
   greeting1.html("WELCOME TO BOOK BANK, PLEASE SIGN UP THE FOLLOWING DETAILS TO RECIEVE OR DONATE BOOKS.")
-  greeting1.position(80,60); 
+  greeting1.position(140,60); 
   greeting1.style('color:white');
   
   greeting2 = createElement('h4'); // GREETINGS(NAME)
@@ -79,13 +80,13 @@ function setup() {
 
 
 }
-
+// first page ends
 function draw() {
   
   background("black");  
 
 }
-
+//second page starts 
 function submitbutton(){  //HIDES THE FIRST PAGE WRITINGS
 
   input1.hide();
@@ -97,11 +98,13 @@ function submitbutton(){  //HIDES THE FIRST PAGE WRITINGS
   greeting3.hide();
   greeting4.hide();
 
-  submit_button.hide();
+
+
+  // image(book1_image, 0,-displayHeight*4,displayWidth, displayHeight*5);
 
   back_button = createButton("Back");
   back_button.position(200,200);
-  back_button.mouseClicked(hide);
+  back_button.mouseClicked(back);
 
   greeting5 = createElement('h2'); // CREATES GREETINGS(SECOND PAGE)
   greeting5.html("GREAT JOB! ONE MORE STEP AND YOU CAN DONATE OR RECIEVE BOOKS.")
@@ -161,6 +164,8 @@ function submitbutton(){  //HIDES THE FIRST PAGE WRITINGS
   submit_button2.style('color:blue');
   submit_button2.mouseClicked(submitbutton2);
 }
+//second page ends
+//third page starts 
 function submitbutton2(){
 
   greeting5.hide();
@@ -179,10 +184,12 @@ function submitbutton2(){
   input9.hide();
 
   submit_button2.hide();
+  submit_button.hide();
+
 
   back_button2 = createButton("Back");
   back_button2.position(200,200);
-  back_button2.mouseClicked(hide2);
+  back_button2.mouseClicked(back2);
 
   greeting12 = createElement('h2'); // CREATES GREETINGS(THIRD PAGE)
   greeting12.html("WHAT DO YOU WANT TO ?")
@@ -204,6 +211,8 @@ function submitbutton2(){
   button2.size(200,50);
   button2.mouseClicked(recievebooks);
 }
+//third page ends
+//4th page starts
 function donatebooks(){
   background("white");
 
@@ -215,7 +224,7 @@ function donatebooks(){
 
   back_button3 = createButton("Back");
   back_button3.position(200,200);
-  back_button3.mouseClicked(hide3);
+  back_button3.mouseClicked(back3);
 
   greeting14 = createElement('h3'); // CREATES GREETINGS OR(FOURTH PAGE)
   greeting14.html("Name of the book");
@@ -284,10 +293,11 @@ function donatebooks(){
   add_book.position(850,550);
   add_book.mouseClicked(add);
 }
-function add(){
-  text(input9.value(),500,100);
-}
-
+//fourth page ends
+// function add(){
+//   text(input9.value(),500,100);
+// }
+//fifth page starts
 function recievebooks(){
 
   button1.hide();
@@ -295,6 +305,10 @@ function recievebooks(){
 
   greeting12.hide();
   greeting13.hide();
+
+  back_button4 = createButton("Back");
+  back_button4.position(200,200);
+  back_button4.mouseClicked(back4);
 
   greeting19 = createElement('h3'); // CREATES GREETINGS OR(FOURTH PAGE)
   greeting19.html("Name of the book");
@@ -358,8 +372,29 @@ function recievebooks(){
   recieve_button.position(1000,550);
   recieve_button.style('color:blue');
 }
+//fifth page ends
+function back(){
 
-function hide(){  // Second page hide button
+  greeting5.hide();
+  greeting6.hide();
+  greeting7.hide();
+  greeting8.hide();
+  greeting9.hide();
+  greeting10.hide();
+  greeting11.hide();
+
+  input4.hide();
+  input5.hide();
+  input6.hide();
+  input7.hide();
+  input8.hide();
+  input9.hide();
+
+  submit_button2.hide();
+  submit_button.hide();
+
+  back_button.hide();
+
   submit_button =  createButton("Submit");  // CREATES THE SUBMIT BUTTON
   submit_button.position(850,430);
   submit_button.style('color:blue');
@@ -393,27 +428,9 @@ function hide(){  // Second page hide button
 
   input3 = createInput("Phone_No.");  // INPUT PHONE_NO.
   input3.position(450,430);
-
-  greeting5.hide();
-  greeting6.hide();
-  greeting7.hide();
-  greeting8.hide();
-  greeting9.hide();
-  greeting10.hide();
-  greeting11.hide();
-
-  input4.hide();
-  input5.hide();
-  input6.hide();
-  input7.hide();
-  input8.hide();
-  input9.hide();
-
-  submit_button2.hide();
-
-  back_button.hide();
 }
-function hide2(){
+
+function back2(){
 
   button1.hide();
   button2.hide();
@@ -421,9 +438,15 @@ function hide2(){
   greeting12.hide();
   greeting13.hide();
 
+  back_button2.hide();
+  back_button.hide();
+  submit_button.hide();
+  submit_button2.hide();
+
+
   back_button = createButton("Back");
   back_button.position(200,200);
-  back_button.mouseClicked(hide);
+  back_button.mouseClicked(back);
 
   greeting5 = createElement('h2'); // CREATES GREETINGS(SECOND PAGE)
   greeting5.html("GREAT JOB! ONE MORE STEP AND YOU CAN DONATE OR RECIEVE BOOKS.")
@@ -483,24 +506,74 @@ function hide2(){
   submit_button2.style('color:blue');
   submit_button2.mouseClicked(submitbutton2);
 }
-function hide3(){
-  back_button2.hide();
+
+function back3(){
+
   back_button3.hide();
-  input9.hide();
+  back_button2.hide();
+  back_button.hide();
+
   greeting14.hide();
   greeting15.hide();
   greeting16.hide();
   greeting17.hide();
   greeting18.hide();
-  donate_button.hide();
+
+  input9.hide();
+
+  dropdown1.remove();
+  dropdown2.remove();
+  dropdown3.remove();
+
   add_book.hide();
-  dropdown1.position(5000,6000);
-  dropdown2.position(5000,6000);
-  dropdown3.position(5000,6000);
+
+
+  donate_button.hide();
 
   back_button2 = createButton("Back");
   back_button2.position(200,200);
-  back_button2.mouseClicked(hide2);
+  back_button2.mouseClicked(back2);
+
+  greeting12 = createElement('h2'); // CREATES GREETINGS(THIRD PAGE)
+  greeting12.html("WHAT DO YOU WANT TO ?")
+  greeting12.position(590,80); 
+  greeting12.style('color:white');
+
+  button1 =  createButton("DONATE BOOKS");  // CREATES THE DONOR BUTTON (THIRD PAGE)
+  button1.position(630,230);
+  button1.size(200,50);
+  button1.mouseClicked(donatebooks);
+
+  greeting13 = createElement('h2'); // CREATES GREETINGS OR(THIRD PAGE)
+  greeting13.html("OR");
+  greeting13.position(710,330); 
+  greeting13.style('color:white');
+
+  button2 =  createButton("RECIEVE BOOKS");  // CREATES THE RECIEVER BUTTON (THIRD PAGE)
+  button2.position(630,430);
+  button2.size(200,50);
+  button2.mouseClicked(recievebooks);
+}
+
+function back4(){
+  back_button3.hide();
+  back_button2.hide();
+  back_button.hide();
+  back_button4.hide();
+  input10.hide();
+  greeting19.hide();
+  greeting20.hide();
+  greeting21.hide();
+  greeting22.hide();
+  greeting23.hide();
+  dropdown4.remove();
+  dropdown5.remove();
+  dropdown6.remove();
+  recieve_button.hide();
+
+  back_button2 = createButton("Back");
+  back_button2.position(200,200);
+  back_button2.mouseClicked(back2);
 
   greeting12 = createElement('h2'); // CREATES GREETINGS(THIRD PAGE)
   greeting12.html("WHAT DO YOU WANT TO ?")
